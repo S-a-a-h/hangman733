@@ -22,6 +22,7 @@ All files are Python-coded.
 #### Usage Instructions
 ---
 This game can be played directly via your system's CLI after installation by running the python file (currently in the making). 
+To begin, open your CLI and type in: python milestone_5.py (currently in the making) 
 
 #### File Structure
 ---
