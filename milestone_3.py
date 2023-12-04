@@ -1,6 +1,6 @@
 import random 
 
-#creayes list of words from which a random is selected by computer 
+#creates list of words from which a random is selected by computer 
 word_list = ['orange', 'kiwi', 'durian', 'rambutan', 'lime']
 word = random.choice(word_list)
 
