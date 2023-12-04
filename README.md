@@ -21,7 +21,7 @@ All files are Python-coded.
 
 #### Usage Instructions
 ---
-This game can be played directly via your system's CLI after installation. 
+This game can be played directly via your system's CLI after installation by running the python file (currently in the making). 
 
 #### File Structure
 ---
@@ -32,10 +32,13 @@ Sets word list from which a random word is selected by the computer and the user
 Checks if the guessed letter is in the word which was randomly selected by computer. Outputs validation or correction required by the user.
 
 #### milestone_4.py
-...
+Replaces _ in the word with the guessed letter, if the guessed letter is in the word. Outputs the number of letters remaining. However, if the guessed letter is not in the word, output displays remaining lives (you have 5 lives to begin with). 
+
+#### milestone_5.py
+
 
 #### License Information
 ---
-
+None. 
 
 
