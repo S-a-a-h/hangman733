@@ -13,7 +13,9 @@
    
 #### Description
 ---
-Hangman is a classic game in which a player thinks of a word and the other player tries to guess that word within a certain amount of attempts. This is an implementation of the Hangman game, where the computer thinks of a word and the user tries to guess it. 
+Hangman is a classic game in which a player thinks of a word and the other player tries to guess that word within a certain amount of attempts. 
+
+This is an implementation of the Hangman game, where the computer thinks of a word and the user tries to guess it. 
 
 #### Installation Instructions
 ---
@@ -22,6 +24,7 @@ All files are Python-coded.
 #### Usage Instructions
 ---
 This game can be played directly via your system's CLI after installation by running the python file (currently in the making). 
+
 To begin, open your CLI and type in: python milestone_5.py (currently in the making) 
 
 #### File Structure
