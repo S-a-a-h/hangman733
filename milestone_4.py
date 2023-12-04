@@ -64,11 +64,8 @@ class Hangman:
                 break
                 
 
+print('Welcome to Hangman. Give it your best shot!')
 hangman = Hangman(word_list)
 hangman.ask_for_input()
 print(hangman.word_guessed) 
 print(f'There are {hangman.num_letters} remaining letters in the word.') 
-
-
-
-
