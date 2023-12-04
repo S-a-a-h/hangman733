@@ -1,5 +1,6 @@
 import random
 
+
 #List of fruits
 word_list = ['orange', 'kiwi', 'durian', 'rambutan', 'lime']
 print(word_list)
@@ -15,3 +16,5 @@ if len(guess) == 1 and guess.isalpha():
     print('Good guess!')
 else:
     print('Oops! That is not a valid input.')
+
+    
