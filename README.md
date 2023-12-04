@@ -1,6 +1,6 @@
 # Hangman
 
-#### Table of Contents, if the README file is long
+#### Table of Contents
 ---
 1. Description
 1. Installation Instructions
