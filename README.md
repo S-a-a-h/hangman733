@@ -1,6 +1,6 @@
 # Hangman
 
-#### Table of Contents
+### Table of Contents
 ---
 1. Description
 1. Installation Instructions
@@ -12,7 +12,7 @@
    - milestone_5.py
 1. License Information
    
-#### Description
+### Description
 ---
 Hangman is a classic game in which a player thinks of a word and the other player tries to guess that word within a certain amount of attempts. 
 
@@ -22,7 +22,7 @@ This is an implementation of the Hangman game, where the computer thinks of a wo
 
 
 
-#### Installation Instructions
+### Installation Instructions
 ---
 1. Download the **milestone_5.py** file onto your computer
 1. Store in an easy-to-access directory, i.e. Desktop, or create a folder named 'Hangman' to store this file
@@ -35,7 +35,7 @@ Note: all files for this project are Python-coded (.py)
 
 
 
-#### Usage Instructions
+### Usage Instructions
 ---
 This game can be played directly via your system's CLI after installation by running the .py file mentioned in **Installation Instructions**.
 
@@ -49,7 +49,7 @@ Follow the instructions and give it you best shot!
 
 
 
-#### File Structure
+### File Structure
 ---
 #### milestone_2.py 
 Sets word list from which a random word is selected by the computer and the user is asked for a singular, alphabetic letter as input. Input is validated.
@@ -64,7 +64,7 @@ Replaces _ in the word with the guess, if there is a match. Outputs the number o
 Contains the Hangman Class with all code required to play the game. Docstrings included. 
 
 
-#### License Information
+### License Information
 ---
 None. 
 
