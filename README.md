@@ -41,7 +41,10 @@ This game can be played directly via your system's CLI after installation by run
 
 
 
-To begin a game, open your CLI, navigate as necessary and type in: python milestone_5.py
+To begin a game, open your CLI, navigate as necessary and type in: python milestone_5.py.
+
+
+
 Follow the instructions and give it you best shot!
 
 
