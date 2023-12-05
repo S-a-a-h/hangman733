@@ -58,7 +58,7 @@ Checks if the guessed letter is in the word which was randomly selected by compu
 Replaces _ in the word with the guess, if there is a match. Outputs the number of letters remaining. However, if the guessed letter is not in the word, output displays remaining lives (you have 5 lives to begin with) and remaining letters in the word. 
 
 #### milestone_5.py
-Contains the Hangman Class with all code required to play the game. Docstrings included.
+Contains the Hangman Class with all code required to play the game. Docstrings included. 
 
 
 #### License Information
