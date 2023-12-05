@@ -36,19 +36,71 @@ list_of_guesses = []
 '''
 
 class Hangman: 
-    """
+    '''
     Hangman Class 
     -------
     This class is used to represent the game, Hangman. 
 
     Attributes
     -------
-    word_list : list
-        word_list from which the computer will randomly select a word and keep it hidden until 
-        completely guessed
-    num_lives : int
-        Set to 5 lives in this game
-    """
+    self.word : str
+        the word which the user must guess
+    self.word_guessed : list
+        a list representing the word which is hidden by '_' for each letter to be guessed by user
+    self.num_letters : int 
+        the number of unique letters in the word yet to be guessed
+    self.num_lives : int
+        the number of lives remaining
+    self.word_list : list 
+        a list containing all words from which the computer will pick one at random to be guessed
+    self.list_of_guesses : list 
+        a list to keep track of all the previous guesses made by the player 
+
+    Methods
+    -------
+    __init__(self, word_list, num_lives=5):
+
+        Parameters
+        -------
+        word_list : list
+            word_list from which the computer will randomly select a word and keep it hidden until 
+            completely guessed
+        num_lives : int
+            Set to 5 lives in this game
+
+    _check_guess(self, guess):
+
+        Parameters
+        -------
+        guess : str
+            A lower-case, singlular, alphabetical character
+
+     _update_word_guessed(self, guess):
+
+        Parameters
+        -------
+        guess : str
+            A lower-case, singlular, alphabetical character
+
+    _lives_left(self, guess):
+
+        Parameters
+        -------
+        guess : str
+            A lower-case, singlular, alphabetical character
+
+    ask_for_input(self):
+
+        Parameters
+        -------
+        None.
+
+    _play_game(self):
+        
+        Parameters
+        -------
+        None.
+    '''
     print('\nWelcome to Hangman. Give it your best shot!\n')
     def __init__(self, word_list, num_lives=5):
         '''
