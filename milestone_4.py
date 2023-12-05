@@ -48,7 +48,6 @@ class Hangman:
         '''
         See help(Hangman) for accurate signature
         '''
-
         self.word = word
         self.word_guessed = ['_' for _ in self.word]
         self.num_letters = len(set(self.word))
