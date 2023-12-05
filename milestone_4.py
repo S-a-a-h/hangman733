@@ -25,10 +25,13 @@ def check_guess(self, guess):
 
 
 #milestone_4.py: class creation
+
+#Hangman Class creation
 word_list = ['orange', 'kiwi', 'durian', 'rambutan', 'lime']
 word = random.choice(word_list)
 list_of_guesses = []
 
+#Hangman contains 4 methods as of 5/12/23
 class Hangman: 
     def __init__(self, word_list, num_lives=5):
         self.word = word
@@ -38,18 +41,26 @@ class Hangman:
         self.word_list = word_list
         self.list_of_guesses = list_of_guesses
 
+
     def check_guess(self, guess): #check_guess method
         guess = guess.lower()
         if guess in self.word:
-            print(f'Good guess! {guess} is in the word.')
-            for _, letter in enumerate(self.word): #for loop in check_guess method that replaces _ with the guessed letter if it's a match
-                if letter == guess:
-                    self.word_guessed[_] = guess
-            self.num_letters -= 1
-        else: #reduces the number of lives by 1 if guess is not in word
-            print(f'Sorry, {guess} is not in the word. Try again.')
-            self.num_lives -= 1
-            print(f'You have {self.num_lives} lives left.')
+            self.update_word_guessed(guess)
+        else:
+            self.lives_left(guess)
+
+
+    def update_word_guessed(self, guess): #update_word_guessed method 
+        print(f'Good guess! {guess} is in the word.')
+        for _, letter in enumerate(self.word): #for loop in check_guess method that replaces _ with the guessed letter if it's a match
+            if letter == guess:
+                self.word_guessed[_] = guess
+        self.num_letters -= 1
+
+
+    def lives_left(self, guess): #lives_left method
+        print(f'Sorry, {guess} is not in the word. Try again. \nYou have {self.num_lives} lives left.')
+
 
     def ask_for_input(self): #ask_for_input method
         while True:
@@ -69,3 +80,4 @@ hangman = Hangman(word_list)
 hangman.ask_for_input()
 print(hangman.word_guessed) 
 print(f'There are {hangman.num_letters} remaining letters in the word.') 
+
