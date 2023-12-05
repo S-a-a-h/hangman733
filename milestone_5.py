@@ -2,8 +2,8 @@
 Hangman Game
 
 This script allows the user to play the hangman game directly from their CLI.
-All files associated to this game are coded in Python and stored as (.py). 
-This script requires that 'random' be installed with the Python environment which the code is stored in. 
+All files associated with this game are coded in Python and stored as (.py) files. 
+This script requires that 'random' be installed in the Python environment which the code is stored in. 
 
 This file can be imported as a class containing the following methods:
     * _check_guess - a protected method which converts the guessed letter to lowercase, 
@@ -15,21 +15,26 @@ This file can be imported as a class containing the following methods:
     * ask_for_input - a public method which asks the user for a single, alphabetical letter as a guess
         and validates it before checking it via _check_guess method and adding the guess to a list of
         previous guesses so as to avoid repitition in the game. 
+    * _play_game - a protected method which ensures that if the number of lives is 0, the game is lost. 
+        If not, this method checks that the number of remaining letters is more than 0 in order 
+        for the game to continue until a win or loss.
 '''
 
 import random 
 
 
-#Hangman Class creation
 word_list = ['orange', 'kiwi', 'durian', 'rambutan', 'lime']
 word = random.choice(word_list)
 list_of_guesses = []
 '''
-Sets the word list from which the computer will randomly choose a word as well as setting an 
-empty list which will be appended to as the game goes on.
+    * word_list - sets the word list from which the computer will randomly choose a word - this can 
+        be changed by the user if necessary, and all other code will run according to the user-modified 
+        list.
+    * word - instructs computer to randomly select a word from the word_list using installed package: 
+    'random'.
+    * list_of_guesses - creates an empty list which will be appended to as the game is initiated and played.
 '''
 
-#Hangman contains 4 methods as of 5/12/23
 class Hangman: 
     """
     Hangman Class 
@@ -44,6 +49,7 @@ class Hangman:
     num_lives : int
         Set to 5 lives in this game
     """
+    print('\nWelcome to Hangman. Give it your best shot!\n')
     def __init__(self, word_list, num_lives=5):
         '''
         See help(Hangman) for accurate signature
@@ -56,11 +62,11 @@ class Hangman:
         self.list_of_guesses = list_of_guesses
 
 
-    def _check_guess(self, guess): #check_guess method
+    def _check_guess(self, guess): 
         '''
-        This function is used to convert the guess to a a lowercase character, checks that the guess is
-        in the word and updates the word's characters' list. 
-        If the guess is not in the word's characters' list, _lives_left method is run.
+        This method is used to convert the guess to a a lowercase character, checks that the guess is in 
+        the word and updates the word's character list. If the guess is not in the word's character list, 
+        _lives_left method is run.
 
         Args:
             guess (Hangman), the letter to be checked. 
@@ -75,30 +81,35 @@ class Hangman:
             self._lives_left(guess)
 
 
-    def _update_word_guessed(self, guess): #update_word_guessed method 
+    def _update_word_guessed(self, guess):
         '''
-        This function is used to update the word's characters' list which is to be guessed. For each 
+        This method is used to update the word's character list which is to be guessed. For each 
         letter in the word, _ is present in order to hide the spelling of the word, so if the guess 
-        matches the hidden letter, the _ is replaced with the guess and the number of letters remaining will
-        be reduced by 1 (or however many times the guess matches a letter in the word).
+        matches any hidden letter, the _ is replaced with the guess and the number of letters remaining 
+        will be reduced by 1 (or by number of times that the guess matches a letter in the word). Notifies
+        the user of number of the remaining letters left to be guessed. 
 
         Args:
-            guess (Hangman), the letter to be updated into the word or the guessed_list. 
+            guess (Hangman), the letter to be updated into the word, if correct, or added the guessed_list, 
+            if incorrect. 
 
         Returns:
             None.
         '''
         print(f'Good guess! {guess} is in the word.')
-        for _, letter in enumerate(self.word): #for loop in check_guess method that replaces _ with the guessed letter if it's a match
+        for _, letter in enumerate(self.word):
             if letter == guess:
                 self.word_guessed[_] = guess
         self.num_letters -= 1
+        print(self.word_guessed) 
+        print(f'There are {self.num_letters} remaining letters in the word.') 
 
 
-    def _lives_left(self, guess): #lives_left method
+    def _lives_left(self, guess):
         '''
-        This function is used to update the user of the number of remaining lives 
-        corresponding to incorrect guesses. Each incorrect guess reduces the lives by 1. 
+        This method is used to notify the user of the number of remaining lives left corresponding 
+        to incorrect guesses. Each incorrect guess reduces the user's lives by 1, after having begun 
+        the game with 5 lives. Notifies the user of number of the remaining letters left to be guessed. 
 
         Args:
             guess (Hangman), the letter to be updated into the guessed_list. 
@@ -106,16 +117,19 @@ class Hangman:
         Returns:
             None.
         '''
+        self.num_lives -= 1
         print(f'Sorry, {guess} is not in the word. Try again. \nYou have {self.num_lives} lives left.')
+        print(self.word_guessed) 
+        print(f'There are {self.num_letters} remaining letters in the word.') 
 
 
-    def ask_for_input(self): #ask_for_input method
+    def ask_for_input(self):
         '''
-        This function is used to ask the user for an input which is known as the guess. In the 
-        while loop, the guess is validated if it is a single, alphabetical character or, notifies 
-        the user if it matches a previous input or, if it is an incorrect guess, runs the code in
-        _check_guess method and adds the guess to the list of guesses after which the while loop is
-        broken.
+        This method is used to ask the user for an input which is known as the guess. In the 
+        while loop, the guess is validated if it is a single, alphabetical character, or, notifies 
+        the user if it matches a previous input. If it is an incorrect guess, _check_guess method is 
+        called and this incorrect guess is added to the list of previous guesses. Then, the while loop
+        is broken.
 
         Args:
             None.
@@ -131,14 +145,40 @@ class Hangman:
                 print('You already tried that letter!')
             else:
                 self._check_guess(guess)
-                self.list_of_guesses.append(guess) #adds incorrect guess to list
-                break
+                self.list_of_guesses.append(guess)
+            break
                 
-#aesthetics of the game
-print('Welcome to Hangman. Give it your best shot!')
-hangman = Hangman(word_list)
-hangman.ask_for_input()
-print(hangman.word_guessed) 
-print(f'There are {hangman.num_letters} remaining letters in the word.') 
 
-#TODO: Allow input to run continuously until game over (lives_left = 0)
+    def _play_game(self):
+        '''
+        This method is used to play the game. In the while loop, the number of lives is evaluated so 
+        if all lives are lost, the game is lost and the while loop is broken. However, if sufficient
+        lives are remaining, the user is prompted to continue playing the game. If all letters in the 
+        word have been guessed, the game is won and thw while loop is broken.   
+
+        Args:
+            None.
+
+        Returns:
+            None.
+        '''  
+        while True:
+            if self.num_lives <= 0:
+                print('You lost...')
+                break
+            elif self.num_letters > 0:
+                self.ask_for_input()
+            else:
+                print('Congratulations! You have won the game!')
+                break
+
+
+help(Hangman)
+game = Hangman(word_list)
+game._play_game()
+'''
+    * help() - built-in Python function that provides accurate signature for argument passed in. 
+        help(Hangman) provides docstrings before initating the game.
+    * game - sets an instance of the Hangman class with word_list as it's parameter.
+    * game._play_game() - calls the _play_game method from the Hangman class. Initiates the game.
+'''
