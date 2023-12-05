@@ -182,3 +182,4 @@ game._play_game()
     * game - sets an instance of the Hangman class with word_list as it's parameter.
     * game._play_game() - calls the _play_game method from the Hangman class. Initiates the game.
 '''
+
