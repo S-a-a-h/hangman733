@@ -1,4 +1,4 @@
-import random
+import random random
 
 
 #List of fruits
