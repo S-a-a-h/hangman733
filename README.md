@@ -9,6 +9,7 @@
    - milestone_2.py
    - milestone_3.py
    - milestone_4.py
+   - milestone_5.py
 1. License Information
    
 #### Description
@@ -26,7 +27,7 @@ This is an implementation of the Hangman game, where the computer thinks of a wo
 1. Download the **milestone_5.py** file onto your computer
 1. Store in an easy-to-access directory, i.e. Desktop, or create a folder named 'Hangman' to store this file
 1. Open up your computer's terminal
-1. Navigate to the directory which you have stored the python file
+1. Navigate to the directory which you have stored milestone_5.py
 
 
 
@@ -36,11 +37,11 @@ Note: all files for this project are Python-coded (.py)
 
 #### Usage Instructions
 ---
-This game can be played directly via your system's CLI after installation by running the python file mentioned in **Installation Instructions**.
+This game can be played directly via your system's CLI after installation by running the .py file mentioned in **Installation Instructions**.
 
 
 
-To begin a game, open your CLI, navigate as necessary and type in: python milestone_5.py (currently in the making)
+To begin a game, open your CLI, navigate as necessary and type in: python milestone_5.py
 Follow the instructions and give it you best shot!
 
 
@@ -54,10 +55,10 @@ Sets word list from which a random word is selected by the computer and the user
 Checks if the guessed letter is in the word which was randomly selected by computer. Outputs validation or correction required by the user.
 
 #### milestone_4.py
-Replaces _ in the word with the guessed letter, if the guessed letter is in the word. Outputs the number of letters remaining. However, if the guessed letter is not in the word, output displays remaining lives (you have 5 lives to begin with). 
+Replaces _ in the word with the guess, if there is a match. Outputs the number of letters remaining. However, if the guessed letter is not in the word, output displays remaining lives (you have 5 lives to begin with) and remaining letters in the word. 
 
 #### milestone_5.py
-
+Contains the Hangman Class with all code required to play the game. Docstrings included.
 
 
 #### License Information
